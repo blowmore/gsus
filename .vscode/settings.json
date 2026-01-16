@@ -1,0 +1,7 @@
+{
+    "gitblame.inlineMessageEnabled": false,
+    "gitblame.inlineMessageFormat": "${author.name} (${time.ago}) ${commit.summary}",
+    "gitblame.statusBarMessageClickAction": "Open tool URL",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+}
