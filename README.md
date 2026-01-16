@@ -7,8 +7,8 @@ It syncs all files locally and does not povide any on-demand access.
 
 # Build dependencies
 
-apt install build-essential
+apt install build-essential cmake
 
 # Development dependencies
 
-apt install clang
+vscode
