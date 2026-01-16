@@ -1,0 +1,49 @@
+BasedOnStyle:  Google
+TabWidth:        4
+IndentWidth:     4
+UseTab:          Never
+ColumnLimit: 200
+
+Language: Cpp
+
+BreakBeforeBraces: Custom
+BraceWrapping: {
+    AfterCaseLabel: 'true'
+    AfterClass: 'true'
+    AfterControlStatement: 'true'
+    AfterEnum : 'true'
+    AfterFunction : 'true'
+    AfterNamespace : 'true'
+    AfterStruct : 'true'
+    AfterUnion : 'true'
+    BeforeCatch : 'true'
+    BeforeElse : 'true'
+    BeforeLambdaBody: 'true' 
+    IndentBraces : 'false'
+    AfterExternBlock : 'true'
+    SplitEmptyFunction : 'true'
+    SplitEmptyRecord : 'true'
+    SplitEmptyNamespace : 'true'
+}
+
+InsertBraces: true
+AllowShortFunctionsOnASingleLine: false
+IndentAccessModifiers: false
+AccessModifierOffset: -4
+DerivePointerAlignment: false
+ReferenceAlignment: Left
+PointerAlignment: Left
+
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:           '"backwardsCompatibility\.hpp"'
+    Priority:        4
+  - Regex:           '<(librealsense|boost|opencv|pcl|Eigen).*'
+    Priority:        3
+  - Regex:           '".*"'
+    Priority:        2
+  - Regex:           '<.*>'
+    Priority:        5
+  - Regex:           '.*'
+    Priority:        1
