@@ -16,10 +16,10 @@ endif()
 
 add_compile_options(-Wall -Wextra -Wpedantic)
 
-add_executable(gsusd src/gsusd.cpp)
+add_executable(gsusd src/daemon/gsusd.cpp)
 target_link_libraries(gsusd PRIVATE ${SDBUS_LIB})
 
-add_executable(gsus src/gsus.cpp)
+add_executable(gsus src/cli/gsus.cpp)
 target_link_libraries(gsus PRIVATE ${SDBUS_LIB})
 
 install(TARGETS gsusd gsus RUNTIME DESTINATION bin)
