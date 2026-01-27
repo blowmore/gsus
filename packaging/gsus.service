@@ -1,0 +1,10 @@
+[Unit]
+Description=gsus daemon (user)
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/gsusd
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
