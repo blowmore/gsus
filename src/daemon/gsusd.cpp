@@ -1,9 +1,10 @@
 // daemon/main.cpp
+#include <systemd/sd-bus.h>
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <string>
-#include <systemd/sd-bus.h>
 #include <vector>
 
 static const char* GSUS_NAME = "org.gsus";

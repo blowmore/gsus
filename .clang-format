@@ -37,9 +37,7 @@ PointerAlignment: Left
 SortIncludes: true
 IncludeBlocks: Regroup
 IncludeCategories:
-  - Regex:           '"backwardsCompatibility\.hpp"'
-    Priority:        4
-  - Regex:           '<(librealsense|boost|opencv|pcl|Eigen).*'
+  - Regex:           '<(systemd).*'
     Priority:        3
   - Regex:           '".*"'
     Priority:        2

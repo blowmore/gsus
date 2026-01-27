@@ -1,10 +1,11 @@
 // cli/gsusctl.cpp
+#include <systemd/sd-bus.h>
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
 #include <string>
-#include <systemd/sd-bus.h>
 #include <vector>
 
 static const char* GSUS_NAME = "org.gsus";
