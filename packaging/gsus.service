@@ -3,7 +3,7 @@ Description=gsus daemon
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/gsusd --system
+ExecStart=/usr/local/bin/gsusd
 Restart=on-failure
 User=root
 Group=root

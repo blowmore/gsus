@@ -106,32 +106,11 @@ int main(int argc, char** argv)
     State state;
     state.items = {"task-a", "task-b"};
 
-    bool use_system = false;
-    for (int i = 1; i < argc; i++)
+    r = sd_bus_open_system(&bus);
+    if (r < 0)
     {
-        if (strcmp(argv[i], "--system") == 0)
-        {
-            use_system = true;
-        }
-    }
-
-    if (use_system)
-    {
-        r = sd_bus_open_system(&bus);
-        if (r < 0)
-        {
-            fprintf(stderr, "Failed to open system bus: %s\n", strerror(-r));
-            return 1;
-        }
-    }
-    else
-    {
-        r = sd_bus_open_user(&bus);  // session/user bus
-        if (r < 0)
-        {
-            fprintf(stderr, "Failed to open user/session bus: %s\n", strerror(-r));
-            return 1;
-        }
+        fprintf(stderr, "Failed to open system bus: %s\n", strerror(-r));
+        return 1;
     }
 
     // register object
