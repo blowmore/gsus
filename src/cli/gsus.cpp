@@ -1,4 +1,3 @@
-// cli/gsusctl.cpp
 #include <systemd/sd-bus.h>
 
 #include <cstdio>
@@ -96,15 +95,15 @@ int main(int argc, char** argv)
 {
     if (argc < 2)
     {
-        fprintf(stderr, "Usage: gsusctl <echo|version|list|add> [...]\n");
+        fprintf(stderr, "Usage: gsus <echo|version|list|add> [...]\n");
         return 1;
     }
 
     sd_bus* bus = nullptr;
-    int r = sd_bus_open_user(&bus);
+    int r = sd_bus_open_system(&bus);
     if (r < 0)
     {
-        fprintf(stderr, "Failed to open user bus: %s\n", strerror(-r));
+        fprintf(stderr, "Failed to open system bus: %s\n", strerror(-r));
         return 1;
     }
 

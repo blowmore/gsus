@@ -1,3 +1,4 @@
 [D-BUS Service]
 Name=org.gsus
-Exec=%h/.local/bin/gsusd
+Exec=/usr/local/bin/gsusd --system
+User=root

@@ -1,10 +1,12 @@
 [Unit]
-Description=gsus daemon (user)
+Description=gsus daemon
 
 [Service]
 Type=simple
-ExecStart=%h/.local/bin/gsusd
+ExecStart=/usr/local/bin/gsusd --system
 Restart=on-failure
+User=root
+Group=root
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
