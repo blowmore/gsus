@@ -17,7 +17,7 @@ struct State
     const char* version = "0.1";
 };
 
-static int method_Echo(sd_bus_message* m, void* userdata, sd_bus_error* ret)
+static int method_Echo(sd_bus_message* m, void*, sd_bus_error*)
 {
     const char* in;
     int r = sd_bus_message_read(m, "s", &in);
@@ -29,13 +29,13 @@ static int method_Echo(sd_bus_message* m, void* userdata, sd_bus_error* ret)
     return sd_bus_reply_method_return(m, "s", in);
 }
 
-static int method_GetVersion(sd_bus_message* m, void* userdata, sd_bus_error* ret)
+static int method_GetVersion(sd_bus_message* m, void* userdata, sd_bus_error*)
 {
     State* s = (State*)userdata;
     return sd_bus_reply_method_return(m, "s", s->version);
 }
 
-static int method_List(sd_bus_message* m, void* userdata, sd_bus_error* ret)
+static int method_List(sd_bus_message* m, void* userdata, sd_bus_error*)
 {
     State* s = (State*)userdata;
     sd_bus_message* reply = nullptr;
@@ -73,7 +73,7 @@ static int method_List(sd_bus_message* m, void* userdata, sd_bus_error* ret)
     return r;
 }
 
-static int method_Add(sd_bus_message* m, void* userdata, sd_bus_error* ret)
+static int method_Add(sd_bus_message* m, void* userdata, sd_bus_error*)
 {
     const char* item;
     int r = sd_bus_message_read(m, "s", &item);
@@ -99,7 +99,7 @@ static const sd_bus_vtable gsus_vtable[] = {SD_BUS_VTABLE_START(0),
                                             SD_BUS_SIGNAL("Changed", "s", 0),
                                             SD_BUS_VTABLE_END};
 
-int main(int argc, char** argv)
+int main(int, char**)
 {
     int r;
     sd_bus* bus = nullptr;
