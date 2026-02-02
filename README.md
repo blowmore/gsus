@@ -6,14 +6,14 @@ The application is a systemd service that two-way syncs a local folder with a re
 It syncs all files locally and does not povide any on-demand access.
 
 # Dependencies
-# Build
+## Build
 ```bash
 build-essential
 cmake
 libsystemd-dev
 ```
 
-# Development
+## Development
 ```bash
 vscode
 ```
