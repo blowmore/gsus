@@ -28,9 +28,14 @@ sudo cmake --install .
 ```
 
 ## Enable service
+Initial enable.
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable --now gsus.service
+```
+Restart (if needed)
+```bash
+sudo systemctl restart gsus.service
 ```
 
 ## Debugging
